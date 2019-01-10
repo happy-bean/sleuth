@@ -35,14 +35,6 @@ public class LogParam {
     public LogParam() {
     }
 
-    public LogParam(String requestIp, String serviceIp, String userAgent, String params, String api) {
-        this.requestIp = requestIp;
-        this.serviceIp = serviceIp;
-        this.userAgent = userAgent;
-        this.params = params;
-        this.api = api;
-    }
-
     public String getRequestIp() {
         return requestIp;
     }
