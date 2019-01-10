@@ -17,7 +17,6 @@ dubbo springboot
 @Aspect
 @Component
 public class DemoAop extends DubboServiceAop {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DubboServiceAop.class);
     @Override
     @Pointcut("execution(* com.xxx..*ProviderImpl.*(..))")
     public void controllerExecute() {
