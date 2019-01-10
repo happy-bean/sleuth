@@ -6,11 +6,13 @@ dubbo springboot
 1.将源码下载  
 2.mvn install 安装到本地  
 3.pom 依赖  
+```
         <dependency>
             <groupId>org.happy.sleuth</groupId>
             <artifactId>sleuth</artifactId>
             <version>1.0</version>
         </dependency>
+ ```
 4.springboot项目代码中  
 
 ```
