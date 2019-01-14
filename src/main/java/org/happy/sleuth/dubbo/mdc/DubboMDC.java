@@ -1,6 +1,7 @@
 package org.happy.sleuth.dubbo.mdc;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
+import org.happy.sleuth.dubbo.excute.ExcuteId;
 import org.happy.sleuth.dubbo.log.LogParam;
 import org.slf4j.MDC;
 
@@ -54,7 +55,7 @@ public class DubboMDC {
         MDC.put(PARAMS, param.getParams());
         MDC.put(SERVER_IP, param.getServiceIp());
         MDC.put(API, param.getApi());
-        MDC.put(EXCUTE_ID, "<" + UUID.randomUUID().toString() + ">");
+        MDC.put(EXCUTE_ID, "<" + ExcuteId.getExcuteId() + ">");
     }
 
     public static void put(String key, String value) {
