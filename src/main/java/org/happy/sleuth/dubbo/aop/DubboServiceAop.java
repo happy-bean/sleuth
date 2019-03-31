@@ -30,7 +30,7 @@ public class DubboServiceAop {
      * @param
      */
     @Pointcut("execution(* com.xxx.api.controller..*(..)) && @annotation(org.springframework.web.bind.annotation.RequestMapping)")
-    public void controllerExecute() {
+    public void serviceExecute() {
     }
 
     /**
@@ -39,7 +39,7 @@ public class DubboServiceAop {
      * @param point
      * @return
      */
-    @Before("controllerExecute()")
+    @Before("serviceExecute()")
     public void excuteBefore(JoinPoint point) {
         long beginTime = System.currentTimeMillis();
         LogParam param = LogParamFactory.buildParam(point);
@@ -59,7 +59,7 @@ public class DubboServiceAop {
         } catch (Exception e) {
 
         }
-        LOGGER.info("[EXCUTE_EXCUTE]");
+        LOGGER.info("[EXCUTE_BEGIN]");
     }
 
     /**
@@ -68,7 +68,7 @@ public class DubboServiceAop {
      * @param point
      * @return
      */
-    @AfterReturning(value = "controllerExecute()", returning = "value")
+    @AfterReturning(value = "serviceExecute()", returning = "value")
     public void excuteAfter(JoinPoint point, Object value) {
         String sBeginTime = DubboMDC.get(DubboMDC.EXCUTE_BEGIN_TIME);
         long beginTime = Long.parseLong(sBeginTime);
