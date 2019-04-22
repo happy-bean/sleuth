@@ -12,6 +12,12 @@ dubbo springboot
             <artifactId>sleuth</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- 如果已经有该依赖可不加 -->
+        <dependency>
+             <groupId>com.alibaba</groupId>
+             <artifactId>dubbo-rpc-api</artifactId>
+             <version>2.6.5</version>
+        </dependency>
  ```
 4.springboot项目代码中  
 
